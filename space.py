@@ -47,13 +47,16 @@ while cursor < len(planets):
 	h = str(int(ly // 3600))
 	m = str(int((ly%3600) // 60))
 	s = str(int((ly%3600) % 60))
+	ms = str(int(((ly%3600) % 60)%100))
 	if int(h) < 10:
 		h = "0" + h
 	if int(m) < 10:
 		m = "0" + m
 	if int(s) < 10:
 		s = "0" + s
-	clock = h + ":" + m + ":" + s
+	if int(ms) < 10:
+		ms = "0" + ms
+	clock = h + ":" + m + ":" + s + "." + ms
 	print(pltxt[cursor] + " > " + str(clock))
 	cursor = cursor + 1
 
